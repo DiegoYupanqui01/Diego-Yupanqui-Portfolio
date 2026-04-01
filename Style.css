@@ -194,6 +194,24 @@ h2 {
   transform: scale(1.03);
 }
 
+.project-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.project-card:hover .project-info {
+  opacity: 1;
+}
+
+
+
+
 .project-card video {
   width: 100%;
   height: 100%;
@@ -226,7 +244,7 @@ h2 {
 }
 
 .project-info p{
-  color: var(--accent-purple)
+  color: var(--accent-blank)
 }
 
 /* ===== Mostrar solo en hover ===== */

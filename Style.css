@@ -536,8 +536,8 @@ footer {
     padding: 8px 16px;
     margin-top: 12px;
     background-color: transparent;
-    color: var(--accent-pink); /* Usa tu variable rosa */
-    border: 2px solid var(--accent-pink);
+    color: var(--accent-purple); /* Usa tu variable rosa */
+    border: 2px solid var(--accent-purple);
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
@@ -548,9 +548,9 @@ footer {
 
 /* Efecto hover brillante al pasar el mouse por el botón */
 .btn-video:hover {
-    background-color: var(--accent-pink);
+    background-color: var(--accent-purple);
     color: #fff;
-    box-shadow: 0 0 15px var(--accent-pink);
+    box-shadow: 0 0 15px var(--accent-purple);
     transform: scale(1.03);
 }
 
@@ -608,6 +608,30 @@ footer {
     width: 100%;
     height: 100%;
     border-radius: 4px;
+}
+
+/* Estilo para el botón de Jugar / Descargar */
+.btn-play {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 12px;
+    background-color: transparent;
+    color: var(--accent-green); /* Tu variable verde neón */
+    border: 2px solid var(--accent-green);
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none; /* Quita la línea de enlace */
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+/* Efecto hover brillante */
+.btn-play:hover {
+    background-color: var(--accent-green);
+    color: #1e1b2e; /* Color oscuro de tu fondo para que contraste el texto */
+    box-shadow: 0 0 15px var(--accent-green);
+    transform: scale(1.03);
 }
 
 @keyframes fadeUp {

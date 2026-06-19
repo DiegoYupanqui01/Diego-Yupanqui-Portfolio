@@ -407,24 +407,7 @@ html {
   color: var(--accent-green)
 }
 
-.btn-video {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 15px;
-    background-color: transparent;
-    color: #ff007f; /* O el color neón de tu paleta */
-    border: 2px solid #ff007f;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
 
-.btn-video:hover {
-    background-color: #ff007f;
-    color: #fff;
-    box-shadow: 0 0 10px #ff007f; /* Efecto brillo */
-}
 
 
 .skills-badges {
@@ -533,6 +516,43 @@ footer {
   box-shadow: 0 15px 40px rgba(0,0,0,0.4);
   border-color: #c770f0;
 }
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeUp linear forwards;
+  animation-timeline: view();
+  animation-range: entry 20% cover 30%;
+  
+  transition: 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn-video {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-top: 12px;
+    background-color: transparent;
+    color: var(--accent-pink); /* Usa tu variable rosa */
+    border: 2px solid var(--accent-pink);
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    z-index: 10; /* Asegura que responda al clic */
+}
+
+/* Efecto hover brillante al pasar el mouse por el botón */
+.btn-video:hover {
+    background-color: var(--accent-pink);
+    color: #fff;
+    box-shadow: 0 0 15px var(--accent-pink);
+    transform: scale(1.03);
+}
 
 /* Estilos del Modal */
 .modal {
@@ -589,22 +609,6 @@ footer {
     height: 100%;
     border-radius: 4px;
 }
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeUp linear forwards;
-  animation-timeline: view();
-  animation-range: entry 20% cover 30%;
-  
-  transition: 0.8s ease;
-}
-
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
 @keyframes fadeUp {
   to {

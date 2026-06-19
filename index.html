@@ -72,6 +72,8 @@
           Creación de mecanicas tipo puzzle, novela visual, toma de desiciones. Apoyo creativo en narrativa y diseño de objetos.
         </p>
         
+       
+
       </div>
     </div>
 
@@ -86,6 +88,12 @@
         <p data-es="Creación de assets 3D e implementación de los objetos en el entorno virtual" data-en="Creation of 3D assets and implementation of objects in the virtual environment">
           Creación de assets 3D e implementación de los objetos en el entorno virtual
         </p>
+
+        <button class="open-video-btn btn-video" data-video="https://www.youtube.com/embed/zu5b3G77790">
+        <span>▶</span> Ver Video Demostrativo
+</button>
+    </a>
+
       </div>
     </div>
 
@@ -204,27 +212,27 @@
       <h3 data-es="Programación C#"
             data-en="C# Language">
             Programación C#</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 85%;"></div>
-      </div>
+            <h4 data-es="Nivel: Avanzado"
+            data-en="Proficiency: Advance">
+            Nivel: Avanzado</h4>
     </div>
 
     <div class="skill-card">
       <h3 data-es="Diseño de escenarios"
-            data-en="Scene Design">
+            data-en="Level Design">
         Diseño de escenarios</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 90%;"></div>
-      </div>
+        <h4 data-es="Nivel: Avanzado"
+            data-en="Proficiency: Advance">
+          Nivel Avanzado</h4>
     </div>
     
     <div class="skill-card">
       <h3 data-es="Animación"
             data-en="Animation">
         Animación </h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 70%;"></div>
-      </div>
+      <h4 data-es="Nivel: Intermedio"
+            data-en="Proficiency: Intermediate">
+            Nivel: Intermedio</h4>
     </div>
 
 
@@ -232,46 +240,46 @@
         <h3 data-es="Modelado en 3D"
             data-en="3D Modeling">
           Modelado en 3D</h3>
-        <div class="skill-bar">
-          <div class="skill-level" style="width: 60%;"></div>
-       </div>
+        <h4 data-es="Nivel: Intermedio"
+            data-en="Proficiency: Intermediate">
+            Nivel: Intermedio</h4>
     </div>
 
 
     <div class="skill-card">
-      <h3 data-es="Diseño grafico"
+      <h3 data-es="Diseño gráfico"
             data-en="Graphic Design">
-        Diseño grafico</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 70%;"></div>
-      </div>
+        Diseño gráfico</h3>
+      <h4 data-es="Nivel: Intermedio"
+            data-en="Proficiency: Intermediate">
+            Nivel: Intermedio</h4>
     </div>
 
      <div class="skill-card">
       <h3 data-es="Diseño web"
             data-en="Web Design">
         Diseño web</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 80%;"></div>
-      </div>
+      <h4 data-es="Nivel: Avanzado"
+            data-en="Proficiency: Advance">
+            Nivel: Avanzado</h4>
     </div>
     
     <div class="skill-card">
       <h3 data-es="Programación IA python"
-            data-en="IA python Programing">
+            data-en="Python AI Programming">
         Programación IA python</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 65%;"></div>
-      </div>
+      <h4 data-es="Nivel: Intermedio"
+            data-en="Proficiency: Intermediate">
+            Nivel: Intermedio</h4>
     </div>
 
    <div class="skill-card">
       <h3 data-es="Edición de videos"
           data-en="Video Editing">
         Edición de videos</h3>
-      <div class="skill-bar">
-        <div class="skill-level" style="width: 85%;"></div>
-      </div>
+      <h4 data-es="Nivel: Avanzado"
+            data-en="Proficiency: Advance">
+            Nivel: Avanzado</h4>
     </div>
 
 
@@ -346,6 +354,16 @@
   </div>
 </section>
 
+
+<div id="videoModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="video-container">
+            <iframe id="modalVideoFrame" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
 <!-- Script para cambiar idioma -->
 <script>
 let currentLang = localStorage.getItem("lang") || "es";
@@ -409,6 +427,40 @@ button.addEventListener("click", () => {
 });
 
 updateLanguage();
+
+
+// --- LÓGICA DEL MODAL DE VIDEO ---
+const modal = document.getElementById("videoModal");
+const videoFrame = document.getElementById("modalVideoFrame");
+const closeBtn = document.querySelector(".close-modal");
+const videoButtons = document.querySelectorAll(".open-video-btn");
+
+// Abrir modal y cargar video
+videoButtons.forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    const videoUrl = this.getAttribute("data-video");
+    videoFrame.src = videoUrl + "?autoplay=1"; // Activa autoplay automáticamente
+    modal.style.display = "block";
+  });
+});
+
+// Cerrar con la X
+if(closeBtn) {
+  closeBtn.addEventListener("click", closeModal);
+}
+
+// Cerrar haciendo clic afuera de la ventana flotante
+window.addEventListener("click", function(e) {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
+function closeModal() {
+  modal.style.display = "none";
+  videoFrame.src = ""; // Detiene el video al limpiar la URL
+}
 </script>
 
 
